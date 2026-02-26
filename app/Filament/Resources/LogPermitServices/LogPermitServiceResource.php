@@ -20,8 +20,8 @@ class LogPermitServiceResource extends Resource
     protected static ?string $model = PermitService::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentList;
-    protected static ?string $recordTitleAttribute = 'Log Izin Pelayanan';
-    protected static ?string $pluralModelLabel = 'Log Izin Pelayanan';
+    protected static ?string $recordTitleAttribute = 'Izin Pelayanan Non Aktif';
+    protected static ?string $pluralModelLabel = 'Izin Pelayanan Non Aktif';
     protected static string | UnitEnum | null $navigationGroup = 'Log';
     protected static ?int $navigationSort = 4;
 

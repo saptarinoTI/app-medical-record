@@ -18,8 +18,9 @@ use UnitEnum;
 class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
-   protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
     protected static ?string $recordTitleAttribute = 'Pelayanan';
+    protected static ?string $modelLabel = 'Pelayanan';
     protected static ?string $pluralModelLabel = 'Pelayanan';
     protected static string | UnitEnum | null $navigationGroup = 'Master Data';
     protected static ?int $navigationSort = 1;

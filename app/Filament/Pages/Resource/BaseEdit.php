@@ -12,11 +12,11 @@ class BaseEdit extends EditRecord
         return $this->getResource()::getUrl('index');
     }
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            DeleteAction::make()
-                ->label('Hapus Data'),
-        ];
-    }
+    // protected function getHeaderActions(): array
+    // {
+    //     return [
+    //         DeleteAction::make()
+    //             ->label('Hapus Data'),
+    //     ];
+    // }
 }
