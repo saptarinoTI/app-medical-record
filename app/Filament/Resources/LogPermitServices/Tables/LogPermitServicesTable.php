@@ -83,7 +83,8 @@ class LogPermitServicesTable
             ])
             ->recordActions([
                 EditAction::make()
-                    ->visible(fn($record) => $record->status !== 'expired'),
+                    ->visible(fn($record) => $record->status !== 'expired')
+                    ->visible(fn() => auth()->user()->isSuperAdmin()),
             ])
             ->toolbarActions([
                 Action::make('cetak_pdf')

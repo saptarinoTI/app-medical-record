@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\PermitServices\Schemas;
+namespace App\Filament\Resources\Services\Schemas;
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
@@ -8,28 +8,16 @@ use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 
-class PermitServiceForm
+class LogPermitServicesForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
-                Select::make('service_id')
-                    ->label('Nama Lengkap')
-                    ->relationship(
-                        name: 'service',
-                        titleAttribute: 'name',
-                        modifyQueryUsing: fn($query) => $query->where('is_active', true)
-                    )
-                    ->live()
-                    ->searchable()
-                    ->preload()
-                    ->required(),
                 Select::make('status')
                     ->label('Status')
                     ->options(['active' => 'Active', 'expired' => 'Expired', 'cancelled' => 'Cancelled'])
                     ->default('active')
-                    ->disabled()
                     ->required(),
                 DatePicker::make('permit_start')
                     ->label('Mulai Izin')

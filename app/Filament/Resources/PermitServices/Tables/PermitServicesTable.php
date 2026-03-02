@@ -28,6 +28,12 @@ class PermitServicesTable
                     ->description(fn(PermitService $record): string => $record->reason ?? '-')
                     // Mengaktifkan fitur bungkus teks agar tidak terpotong (truncate)
                     ->wrap(),
+                TextColumn::make('service.specialist')
+                    ->label('Poli')
+                    ->sortable()
+                    ->searchable()
+                    ->badge()
+                    ->wrap(),
                 TextColumn::make('permit_start')
                     ->label('Mulai')
                     ->date('d M Y')

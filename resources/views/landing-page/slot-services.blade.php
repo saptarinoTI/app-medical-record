@@ -278,11 +278,10 @@
                         <thead class="bg-gray-50 border-b border-gray-100">
                             <tr>
                                 <th class="text-left py-4 px-6 font-semibold text-gray-600">No</th>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-600">Nama Dokter</th>
+                                <th class="text-left py-4 px-6 font-semibold text-gray-600">Nama</th>
                                 <th class="text-left py-4 px-6 font-semibold text-gray-600">Poli</th>
                                 <th class="text-left py-4 px-6 font-semibold text-gray-600">Waktu Praktek</th>
                                 <th class="text-left py-4 px-6 font-semibold text-gray-600">Kuota</th>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-600">Status</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
@@ -300,14 +299,6 @@
                                         <span
                                             :class="'px-3 py-1 rounded-full text-xs font-medium ' + getKuotaClass(item.kuota)"
                                             x-text="item.kuota + ' pasien'"></span>
-                                    </td>
-                                    <td class="py-4 px-6">
-                                        <span
-                                            :class="'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium ' +
-                                            getKuotaClass(item.kuota)">
-                                            <i class="fas fa-circle text-[6px]"></i>
-                                            <span x-text="getKuotaStatus(item.kuota)"></span>
-                                        </span>
                                     </td>
                                 </tr>
                             </template>

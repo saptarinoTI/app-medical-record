@@ -7,6 +7,7 @@ use App\Filament\Resources\LogPermitServices\Pages\EditLogPermitService;
 use App\Filament\Resources\LogPermitServices\Pages\ListLogPermitServices;
 use App\Filament\Resources\LogPermitServices\Schemas\LogPermitServiceForm;
 use App\Filament\Resources\LogPermitServices\Tables\LogPermitServicesTable;
+use App\Filament\Resources\Services\Schemas\LogPermitServicesForm;
 use App\Models\PermitService;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -27,8 +28,11 @@ class LogPermitServiceResource extends Resource
 
     // --- FITUR: HANYA LIHAT (READ-ONLY) ---
     public static function canCreate(): bool { return false; }
-    public static function canEdit($record): bool { return false; }
-    public static function canDelete($record): bool { return false; }
+
+    public static function form(Schema $schema): Schema
+    {
+        return LogPermitServicesForm::configure($schema);
+    }
 
     public static function table(Table $table): Table
     {
