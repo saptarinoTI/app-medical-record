@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Services\Schemas;
+namespace App\Filament\Resources\LogPermitServices\Schemas;
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
