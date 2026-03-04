@@ -39,7 +39,7 @@ class PermitLeaveService
             ->when($filters['search'] ?? null, 
                 fn ($q, $search) => $q->search($search)
             )
-            ->latest()
+            ->orderBy('permit_start')
             ->paginate($perPage);
     }
 
