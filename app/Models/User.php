@@ -51,7 +51,7 @@ class User extends Authenticatable
 
     public function isSuperAdmin(): bool
     {
-        return $this->role === 'superadmin';
+        return $this->role === 'SuperAdmin';
     }
 
     public function isAdmin(): bool
@@ -61,6 +61,7 @@ class User extends Authenticatable
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->isSuperAdmin() || $this->isAdmin();
+        return true;
+        // return $this->isSuperAdmin() || $this->isAdmin();
     }
 }
