@@ -7,6 +7,7 @@ use App\Observers\PermitServiceObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Services\PermitLeaveService;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
         PermitService::observe(PermitServiceObserver::class);
         if (!app()->runningInConsole()) {
             app(\App\Services\PermitLeaveService::class)->expireIfNeeded();
+        }
+        if (config('app.env') === 'production') {
+            URL::forceScheme('https');
         }
     }
 }
